@@ -12,7 +12,7 @@ import AudioKit
 class Oscillator {
     var oscillator = AKOscillator()
     
-    func start() {
+    func play() {
         AudioKit.output = oscillator
         try? AudioKit.start()
         oscillator.rampDuration = 0
