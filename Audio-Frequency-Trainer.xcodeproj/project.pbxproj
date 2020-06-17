@@ -13,6 +13,7 @@
 		67571E76249A30090063B786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67571E74249A30090063B786 /* Main.storyboard */; };
 		67571E78249A30090063B786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67571E77249A30090063B786 /* Assets.xcassets */; };
 		67571E7B249A30090063B786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67571E79249A30090063B786 /* LaunchScreen.storyboard */; };
+		67571E83249A301E0063B786 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E82249A301E0063B786 /* Frequency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		67571E77249A30090063B786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67571E7A249A30090063B786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67571E7C249A30090063B786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67571E82249A301E0063B786 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				67571E77249A30090063B786 /* Assets.xcassets */,
 				67571E79249A30090063B786 /* LaunchScreen.storyboard */,
 				67571E7C249A30090063B786 /* Info.plist */,
+				67571E82249A301E0063B786 /* Frequency.swift */,
 			);
 			path = "Audio-Frequency-Trainer";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67571E83249A301E0063B786 /* Frequency.swift in Sources */,
 				67571E73249A30090063B786 /* ViewController.swift in Sources */,
 				67571E6F249A30090063B786 /* AppDelegate.swift in Sources */,
 				67571E71249A30090063B786 /* SceneDelegate.swift in Sources */,
