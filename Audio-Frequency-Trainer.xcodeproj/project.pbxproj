@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		671B8F57249A33F60058474B /* DifficultyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671B8F56249A33F60058474B /* DifficultyMode.swift */; };
+		671B8F5F249A3ACE0058474B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 671B8F5E249A3ACE0058474B /* .gitignore */; };
 		67571E6F249A30090063B786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E6E249A30090063B786 /* AppDelegate.swift */; };
 		67571E71249A30090063B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E70249A30090063B786 /* SceneDelegate.swift */; };
 		67571E73249A30090063B786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E72249A30090063B786 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		671B8F56249A33F60058474B /* DifficultyMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyMode.swift; sourceTree = "<group>"; };
+		671B8F5E249A3ACE0058474B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		67571E6B249A30090063B786 /* Audio-Frequency-Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Audio-Frequency-Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67571E6E249A30090063B786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67571E70249A30090063B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 		67571E62249A30090063B786 = {
 			isa = PBXGroup;
 			children = (
+				671B8F5E249A3ACE0058474B /* .gitignore */,
 				67571E6D249A30090063B786 /* Audio-Frequency-Trainer */,
 				67571E6C249A30090063B786 /* Products */,
 			);
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671B8F5F249A3ACE0058474B /* .gitignore in Resources */,
 				67571E7B249A30090063B786 /* LaunchScreen.storyboard in Resources */,
 				67571E78249A30090063B786 /* Assets.xcassets in Resources */,
 				67571E76249A30090063B786 /* Main.storyboard in Resources */,
