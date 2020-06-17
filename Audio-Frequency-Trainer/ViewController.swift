@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var oscillator = Oscillator()
+    var frequencies = makeFrequencyArray(difficultyMode: .normal)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        let frequency = frequencies.randomElement()!
+        oscillator.stop()
+        oscillator.changeFrequency(to: frequency.frequency)
+        oscillator.play()
     }
 }
-
