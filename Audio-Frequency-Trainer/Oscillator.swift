@@ -18,7 +18,7 @@ class Oscillator {
         oscillator.rampDuration = 0
         oscillator.play()
     }
-    func pause() {
+    func stop() {
         oscillator.stop()
     }
     func changeFrequency(to value: Int) {
