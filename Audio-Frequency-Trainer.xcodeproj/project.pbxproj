@@ -72,13 +72,13 @@
 				67571E6E249A30090063B786 /* AppDelegate.swift */,
 				67571E70249A30090063B786 /* SceneDelegate.swift */,
 				67571E72249A30090063B786 /* ViewController.swift */,
-				671B8F62249A3CED0058474B /* Oscillator.swift */,
 				67571E74249A30090063B786 /* Main.storyboard */,
 				67571E77249A30090063B786 /* Assets.xcassets */,
 				67571E79249A30090063B786 /* LaunchScreen.storyboard */,
 				67571E7C249A30090063B786 /* Info.plist */,
 				67571E82249A301E0063B786 /* Frequency.swift */,
 				671B8F56249A33F60058474B /* DifficultyMode.swift */,
+				671B8F62249A3CED0058474B /* Oscillator.swift */,
 			);
 			path = "Audio-Frequency-Trainer";
 			sourceTree = "<group>";
