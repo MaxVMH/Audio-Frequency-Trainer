@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		671B8F57249A33F60058474B /* DifficultyMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671B8F56249A33F60058474B /* DifficultyMode.swift */; };
 		67571E6F249A30090063B786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E6E249A30090063B786 /* AppDelegate.swift */; };
 		67571E71249A30090063B786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E70249A30090063B786 /* SceneDelegate.swift */; };
 		67571E73249A30090063B786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67571E72249A30090063B786 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		671B8F56249A33F60058474B /* DifficultyMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyMode.swift; sourceTree = "<group>"; };
 		67571E6B249A30090063B786 /* Audio-Frequency-Trainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Audio-Frequency-Trainer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		67571E6E249A30090063B786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67571E70249A30090063B786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				67571E79249A30090063B786 /* LaunchScreen.storyboard */,
 				67571E7C249A30090063B786 /* Info.plist */,
 				67571E82249A301E0063B786 /* Frequency.swift */,
+				671B8F56249A33F60058474B /* DifficultyMode.swift */,
 			);
 			path = "Audio-Frequency-Trainer";
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67571E83249A301E0063B786 /* Frequency.swift in Sources */,
+				671B8F57249A33F60058474B /* DifficultyMode.swift in Sources */,
 				67571E73249A30090063B786 /* ViewController.swift in Sources */,
 				67571E6F249A30090063B786 /* AppDelegate.swift in Sources */,
 				67571E71249A30090063B786 /* SceneDelegate.swift in Sources */,
