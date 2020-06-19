@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Maybe you were correct.", message: "The answer you are looking for is boobies and \(currentFrequency!.description)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, allFrequencies: frequencies)
         oscillator.stop()
         oscillator.changeFrequency(to: currentFrequency!.frequency)
