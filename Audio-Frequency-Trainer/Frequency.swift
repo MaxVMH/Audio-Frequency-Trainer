@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Frequency {
+struct Frequency: Equatable {
     let frequency: Int
     var description: String {
         if frequency >= 1000 {
@@ -83,4 +83,12 @@ func makeFrequencyArray(difficultyMode: DifficultyMode) -> [Frequency] {
         frequencies += [Frequency(frequency: 16000)]
         return frequencies
     }
+}
+
+func getNewFrequency(previousFrequency: Frequency, allFrequencies: [Frequency]) -> Frequency {
+    var nextFrequency = allFrequencies.randomElement()
+    while (nextFrequency == previousFrequency) {
+        nextFrequency = allFrequencies.randomElement()
+    }
+    return nextFrequency!
 }

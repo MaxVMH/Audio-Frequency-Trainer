@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentFrequency = frequencies.randomElement()!
+        currentFrequency = frequencies.randomElement()
+        oscillator.changeFrequency(to: currentFrequency!.frequency)
     }
 
     @IBAction func startButtonTapped(_ sender: Any) {
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        currentFrequency = frequencies.randomElement()!
+        currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, allFrequencies: frequencies)
         oscillator.stop()
         oscillator.changeFrequency(to: currentFrequency!.frequency)
         oscillator.play()
