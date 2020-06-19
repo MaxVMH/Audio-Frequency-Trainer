@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
     var oscillator = Oscillator()
     var frequencies = makeFrequencyArray(difficultyMode: .normal)
     var currentFrequency: Frequency? = nil
@@ -18,13 +18,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         currentFrequency = frequencies.randomElement()
         oscillator.changeFrequency(to: currentFrequency!.frequency)
+        
+        self.frequencyPickerView.delegate = self
+        self.frequencyPickerView.dataSource = self
     }
-
-    @IBAction func startButtonTapped(_ sender: Any) {
+    
+    @IBAction func playButtonActivated(_ sender: Any) {
         oscillator.play()
     }
     
-    @IBAction func stopButtonTapped(_ sender: Any) {
+    @IBAction func playButtonReleased(_ sender: Any) {
         oscillator.stop()
     }
     
@@ -34,8 +37,21 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
         currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, allFrequencies: frequencies)
-        oscillator.stop()
         oscillator.changeFrequency(to: currentFrequency!.frequency)
-        oscillator.play()
+    }
+    
+    
+    @IBOutlet weak var frequencyPickerView: UIPickerView!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return frequencies.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(frequencies[row].description)"
     }
 }
