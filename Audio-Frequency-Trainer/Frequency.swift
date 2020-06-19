@@ -11,7 +11,7 @@ import Foundation
 struct Frequency {
     let frequency: Int
     var description: String {
-        if frequency > 1000 {
+        if frequency >= 1000 {
             return "\(Double(frequency)/1000) kHz"
         }
         return "\(frequency) Hz"
