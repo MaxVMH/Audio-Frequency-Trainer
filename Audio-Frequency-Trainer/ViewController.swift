@@ -13,7 +13,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var oscillator = Oscillator()
     var frequencies = createFilteredFrequenciesArray(difficultyMode: .normal)
     var currentFrequency: Frequency? = nil
-    var difficultyMode: DifficultyMode = .normal
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +22,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.frequencyPickerView.delegate = self
         self.frequencyPickerView.dataSource = self
         
-        
         difficultyModeSegmentedControl.removeAllSegments()
-        difficultyModeSegmentedControl.insertSegment(withTitle: "Easy", at: 0, animated: true)
-        difficultyModeSegmentedControl.insertSegment(withTitle: "Normal", at: 1, animated: true)
-        difficultyModeSegmentedControl.insertSegment(withTitle: "Hard", at: 2, animated: true)
-        difficultyModeSegmentedControl.insertSegment(withTitle: "Pro", at: 3, animated: true)
+        DifficultyMode.allCases.forEach {
+            difficultyModeSegmentedControl.insertSegment(withTitle: $0.description, at: $0.rawValue, animated: true)
+        }
     }
     
     @IBAction func playButtonActivated(_ sender: Any) {
