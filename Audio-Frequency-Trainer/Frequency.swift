@@ -55,10 +55,11 @@ func makeFrequencyArray() -> [Frequency] {
     return frequencies
 }
 
-func getNewFrequency(previousFrequency: Frequency, allFrequencies: [Frequency]) -> Frequency {
-    var nextFrequency = allFrequencies.randomElement()
+func getNewFrequency(previousFrequency: Frequency, allFrequencies: [Frequency], difficultyMode: DifficultyMode) -> Frequency {
+    let filteredFrequencies = allFrequencies.filter{ $0.difficulty.rawValue <= difficultyMode.rawValue }
+    var nextFrequency = filteredFrequencies.randomElement()
     while (nextFrequency == previousFrequency) {
-        nextFrequency = allFrequencies.randomElement()
+        nextFrequency = filteredFrequencies.randomElement()
     }
     return nextFrequency!
 }
