@@ -21,12 +21,15 @@ class Oscillator {
     func play() {
         oscillator.play()
     }
+    
     func stop() {
         oscillator.stop()
     }
+    
     func changeFrequency(to value: Int) {
         oscillator.frequency = Double(value)
     }
+    
     func changeVolume(to value: Int) {
         oscillator.amplitude = Double(value)
     }
