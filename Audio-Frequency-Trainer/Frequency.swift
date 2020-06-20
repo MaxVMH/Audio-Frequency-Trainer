@@ -19,7 +19,7 @@ struct Frequency: Equatable {
     }
 }
 
-func makeFrequencyArray() -> [Frequency] {
+func createAllFrequenciesArray() -> [Frequency] {
     var frequencies = [Frequency]()
     frequencies += [Frequency(frequency: 20, difficulty: .pro)]
     frequencies += [Frequency(frequency: 25, difficulty: .pro)]
@@ -55,11 +55,16 @@ func makeFrequencyArray() -> [Frequency] {
     return frequencies
 }
 
-func getNewFrequency(previousFrequency: Frequency, allFrequencies: [Frequency], difficultyMode: DifficultyMode) -> Frequency {
+func createFilteredFrequenciesArray(difficultyMode: DifficultyMode) -> [Frequency] {
+    let allFrequencies = createAllFrequenciesArray()
     let filteredFrequencies = allFrequencies.filter{ $0.difficulty.rawValue <= difficultyMode.rawValue }
-    var nextFrequency = filteredFrequencies.randomElement()
+    return filteredFrequencies
+}
+
+func getNewFrequency(previousFrequency: Frequency, frequencies: [Frequency], difficultyMode: DifficultyMode) -> Frequency {
+    var nextFrequency = frequencies.randomElement()
     while (nextFrequency == previousFrequency) {
-        nextFrequency = filteredFrequencies.randomElement()
+        nextFrequency = frequencies.randomElement()
     }
     return nextFrequency!
 }

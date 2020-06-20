@@ -11,12 +11,12 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var oscillator = Oscillator()
-    var frequencies = makeFrequencyArray(difficultyMode: .normal)
+    var frequencies = createFilteredFrequenciesArray(difficultyMode: .normal)
     var currentFrequency: Frequency? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentFrequency = frequencies.randomElement()
+        currentFrequency = getNewFrequency(previousFrequency: Frequency(frequency: 400, difficulty: .normal), frequencies: frequencies, difficultyMode: .normal)
         oscillator.changeFrequency(to: currentFrequency!.frequency)
         
         self.frequencyPickerView.delegate = self
@@ -32,12 +32,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "Maybe you were correct.", message: "The answer you are looking for is \(currentFrequency!.description)", preferredStyle: .alert)
+        let pickedFrequency = frequencies[frequencyPickerView.selectedRow(inComponent: 0)]
+        var alertTitle: String
+        var alertMessage: String
+        
+        if pickedFrequency == currentFrequency {
+            alertTitle = "Correct!"
+            alertMessage = "Go try some more."
+            currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, frequencies: frequencies, difficultyMode: .normal)
+            oscillator.changeFrequency(to: currentFrequency!.frequency)
+        } else {
+            alertTitle = "Not correct!"
+            alertMessage = "Try again and do better."
+        }
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
-        currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, allFrequencies: frequencies)
-        oscillator.changeFrequency(to: currentFrequency!.frequency)
     }
     
     
@@ -54,4 +65,5 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(frequencies[row].description)"
     }
+    
 }
