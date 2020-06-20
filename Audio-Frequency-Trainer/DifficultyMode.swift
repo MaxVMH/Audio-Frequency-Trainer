@@ -8,6 +8,15 @@
 
 import Foundation
 
-enum DifficultyMode: Int {
+enum DifficultyMode: Int, CaseIterable {
     case easy, normal, hard, pro
+    
+    var description: String {
+        switch self {
+        case .easy: return  "Easy"
+        case .normal: return "Normal"
+        case .hard: return   "Hard"
+        case .pro: return    "Pro"
+        }
+    }
 }
