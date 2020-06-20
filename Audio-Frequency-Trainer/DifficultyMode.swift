@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum DifficultyMode {
+enum DifficultyMode: Int {
     case easy, normal, hard, pro
 }
