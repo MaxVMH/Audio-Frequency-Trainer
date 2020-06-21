@@ -13,10 +13,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var oscillator = Oscillator()
     var frequencies = createFilteredFrequenciesArray(difficultyMode: .normal)
     var currentFrequency: Frequency? = nil
+    var difficultyMode: DifficultyMode = .normal
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentFrequency = getNewFrequency(previousFrequency: Frequency(frequency: 400, difficulty: .normal), frequencies: frequencies, difficultyMode: .normal)
+        
+        currentFrequency = getNewFrequency(previousFrequency: Frequency(frequency: 400, difficulty: difficultyMode), frequencies: frequencies, difficultyMode: difficultyMode)
         oscillator.changeFrequency(to: currentFrequency!.frequency)
         
         self.frequencyPickerView.delegate = self
@@ -26,6 +28,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         DifficultyMode.allCases.forEach {
             difficultyModeSegmentedControl.insertSegment(withTitle: $0.description, at: $0.rawValue, animated: true)
         }
+        difficultyModeSegmentedControl.selectedSegmentIndex = 1
     }
     
     @IBAction func playButtonActivated(_ sender: Any) {
@@ -44,7 +47,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if pickedFrequency == currentFrequency {
             alertTitle = "Correct!"
             alertMessage = "Try some more."
-            currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, frequencies: frequencies, difficultyMode: .normal)
+            currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, frequencies: frequencies, difficultyMode: difficultyMode)
             oscillator.changeFrequency(to: currentFrequency!.frequency)
         } else {
             alertTitle = "Not correct!"
@@ -72,4 +75,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     @IBOutlet weak var difficultyModeSegmentedControl: UISegmentedControl!
+    
+    @IBAction func difficultyModeChanged(_ sender: Any) {
+        difficultyMode = DifficultyMode.init(rawValue: difficultyModeSegmentedControl.selectedSegmentIndex)!
+    }    
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,26 +12,26 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Audio_Frequency_Trainer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tcv-L4-0aA">
-                                <rect key="frame" x="10" y="31.5" width="876" height="351"/>
+                                <rect key="frame" x="10" y="222" width="394" height="452.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-Pv-8OU">
-                                        <rect key="frame" x="232" y="0.0" width="412.5" height="290"/>
+                                        <rect key="frame" x="37" y="0.0" width="320" height="391.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Frequency Trainer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-Ry-5cR">
-                                                <rect key="frame" x="0.0" y="0.0" width="412.5" height="48"/>
+                                                <rect key="frame" x="11.5" y="0.0" width="297" height="95.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ce-lW-Q0g">
-                                                <rect key="frame" x="46" y="58" width="320" height="162"/>
+                                                <rect key="frame" x="0.0" y="105.5" width="320" height="216"/>
                                             </pickerView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Mkt-af-824">
-                                                <rect key="frame" x="104" y="230" width="204" height="60"/>
+                                                <rect key="frame" x="58" y="331.5" width="204" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vh-Ui-gb3">
                                                         <rect key="frame" x="0.0" y="0.0" width="73" height="60"/>
@@ -55,11 +55,14 @@
                                         </subviews>
                                     </stackView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I4e-yd-BPw">
-                                        <rect key="frame" x="372.5" y="320" width="131" height="32"/>
+                                        <rect key="frame" x="131.5" y="421.5" width="131" height="32"/>
                                         <segments>
                                             <segment title="First"/>
                                             <segment title="Second"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="difficultyModeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eAH-8j-pD2"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
