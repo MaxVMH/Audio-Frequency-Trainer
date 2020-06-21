@@ -78,5 +78,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func difficultyModeChanged(_ sender: Any) {
         difficultyMode = DifficultyMode.init(rawValue: difficultyModeSegmentedControl.selectedSegmentIndex)!
+        frequencies = createFilteredFrequenciesArray(difficultyMode: difficultyMode)
+        currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, frequencies: frequencies, difficultyMode: difficultyMode)
+        oscillator.changeFrequency(to: currentFrequency!.frequency)
+        frequencyPickerView.reloadAllComponents()
+        frequencyPickerView.selectRow(0, inComponent: 0, animated: true)
     }    
 }
