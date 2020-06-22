@@ -43,19 +43,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let pickedFrequency = frequencies[frequencyPickerView.selectedRow(inComponent: 0)]
         var alertTitle: String
         var alertMessage: String
+        var alertColor: UIColor
         
         if pickedFrequency == currentFrequency {
             alertTitle = "Correct!"
             alertMessage = "Next"
+            alertColor = .systemGreen
             currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, frequencies: frequencies, difficultyMode: difficultyMode)
             oscillator.changeFrequency(to: currentFrequency!.frequency)
             frequencyPickerView.selectRow(0, inComponent: 0, animated: true)
         } else {
             alertTitle = "Not correct!"
             alertMessage = "Try again"
+            alertColor = .systemRed
         }
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.view.tintColor = alertColor
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
