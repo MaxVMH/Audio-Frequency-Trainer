@@ -46,13 +46,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         if pickedFrequency == currentFrequency {
             alertTitle = "Correct!"
-            alertMessage = "Try some more."
+            alertMessage = "Next"
             currentFrequency = getNewFrequency(previousFrequency: currentFrequency!, frequencies: frequencies, difficultyMode: difficultyMode)
             oscillator.changeFrequency(to: currentFrequency!.frequency)
             frequencyPickerView.selectRow(0, inComponent: 0, animated: true)
         } else {
             alertTitle = "Not correct!"
-            alertMessage = "Try again."
+            alertMessage = "Try again"
         }
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
